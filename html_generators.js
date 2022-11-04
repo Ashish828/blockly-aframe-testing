@@ -1700,6 +1700,422 @@ HtmlGenerator["auto_detect_controllers_trackedcontrols"] = function (block) {
 };
 
 //================================================================================================================
+
+// ui_button_base, UI_BUTTON_BASE
+HtmlGenerator["ui_button_base"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_BUTTON_BASE");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " base: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_button_top, UI_BUTTON_TOP
+HtmlGenerator["ui_button_top"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_BUTTON_TOP");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " top: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_button_pressed, UI_BUTTON_PRESSED
+HtmlGenerator["ui_button_pressed"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_BUTTON_PRESSED");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " pressed: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_button_baseColor, UI_BUTTON_BASE_COLOR
+HtmlGenerator["ui_button_baseColor"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_BUTTON_BASE_COLOR");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " baseColor: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_button_pressedColor, UI_BUTTON_PRESSED_COLOR
+HtmlGenerator["ui_button_pressedColor"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_BUTTON_PRESSED_COLOR");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " pressedColor: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_button_color, UI_BUTTON_COLOR
+HtmlGenerator["ui_button_color"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_BUTTON_COLOR");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " color: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_button_topY, UI_BUTTON_TOP_Y
+HtmlGenerator["ui_button_topY"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_BUTTON_TOP_Y");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " topY: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_button_pressedY, UI_BUTTON_PRESSED_Y
+HtmlGenerator["ui_button_pressedY"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_BUTTON_PRESSED_Y");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " pressedY: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_toggle_value, UI_TOGGLE_VALUE
+HtmlGenerator["ui_toggle_value"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_TOGGLE_VALUE");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " value: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_slider_value, UI_SLIDER_VALUE
+HtmlGenerator["ui_slider_value"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_SLIDER_VALUE");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " value: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_slider_min, UI_SLIDER_MIN
+HtmlGenerator["ui_slider_min"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_SLIDER_MIN");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " min: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_slider_max, UI_SLIDER_MAX
+HtmlGenerator["ui_slider_max"] = function (block) {
+  var dropdown_model = block.getFieldValue("UI_SLIDER_MAX");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " max: " + dropdown_model + ";";
+
+  return code;
+};
+
+// ui_button_option, UI_BUTTON_OPTION
+HtmlGenerator["ui_button_option"] = function (block) {
+  var statements_hit_test_options = HtmlGenerator.statementToCode(
+    block,
+    "UI_BUTTON_OPTION"
+  );
+
+  var code = ' ui-button="' + statements_hit_test_options + '"';
+  return code;
+};
+// ui_toggle_option, UI_TOGGLE_OPTION
+HtmlGenerator["ui_toggle_option"] = function (block) {
+  var statements_hit_test_options = HtmlGenerator.statementToCode(
+    block,
+    "UI_TOGGLE_OPTION"
+  );
+
+  var code = ' ui-toggle="' + statements_hit_test_options + '"';
+  return code;
+};
+// ui_slider_option, UI_SLIDER_OPTION
+HtmlGenerator["ui_slider_option"] = function (block) {
+  var statements_hit_test_options = HtmlGenerator.statementToCode(
+    block,
+    "UI_SLIDER_OPTION"
+  );
+
+  var code = ' ui-slider="' + statements_hit_test_options + '"';
+  return code;
+};
+
+// ui_button, UI_BUTTON
+HtmlGenerator["ui_button"] = function (block) {
+  var text = block.getFieldValue("UI_BUTTON");
+  // TODO: Assemble JavaScript into code variable.
+  var code = "" + text + " ";
+  return code;
+};
+
+// ui_toggle, UI_TOGGLE
+HtmlGenerator["ui_toggle"] = function (block) {
+  var text = block.getFieldValue("UI_TOGGLE");
+  // TODO: Assemble JavaScript into code variable.
+  var code = "" + text + " ";
+  return code;
+};
+
+// ui_slider, UI_SLIDER
+HtmlGenerator["ui_slider"] = function (block) {
+  var text = block.getFieldValue("UI_SLIDER");
+  // TODO: Assemble JavaScript into code variable.
+  var code = "" + text + " ";
+  return code;
+};
+
+// ui_rotary, UI_ROTARY
+HtmlGenerator["ui_rotary"] = function (block) {
+  var text = block.getFieldValue("UI_ROTARY");
+  // TODO: Assemble JavaScript into code variable.
+  var code = "" + text + " ";
+  return code;
+};
+
+//================================================================================================================
+
+// movement_controls, MOVEMENT_CONTROLS
+HtmlGenerator["movement_controls"] = function (block) {
+  var text = block.getFieldValue("MOVEMENT_CONTROLS");
+  // TODO: Assemble JavaScript into code variable.
+  var code = "" + text + " ";
+  return code;
+};
+
+// movement_controls_options, MOVEMENT_CONTROLS_OPTIONS
+HtmlGenerator["movement_controls_options"] = function (block) {
+  var statements_hit_test_options = HtmlGenerator.statementToCode(
+    block,
+    "MOVEMENT_CONTROLS_OPTIONS"
+  );
+
+  var code = ' movement-controls="' + statements_hit_test_options + '"';
+  return code;
+};
+
+// movement_controls_enabled, ENABLED
+HtmlGenerator["movement_controls_enabled"] = function (block) {
+  var dropdown_option = block.getFieldValue("ENABLED");
+
+  var code = "enabled:" + dropdown_option + "; ";
+  return code;
+};
+
+// movement_controls_controls, CONTROLS
+HtmlGenerator["movement_controls_controls"] = function (block) {
+  var dropdown_option = block.getFieldValue("CONTROLS");
+
+  var code = "controls:" + dropdown_option + "; ";
+  return code;
+};
+
+// movement_controls_fly, FLY
+HtmlGenerator["movement_controls_fly"] = function (block) {
+  var dropdown_option = block.getFieldValue("FLY");
+
+  var code = "fly:" + dropdown_option + "; ";
+  return code;
+};
+
+// movement_controls_constrainToNavMesh, CONSTRAINTONAVMESH
+HtmlGenerator["movement_controls_constrainToNavMesh"] = function (block) {
+  var dropdown_option = block.getFieldValue("CONSTRAINTONAVMESH");
+
+  var code = "constrainToNavMesh:" + dropdown_option + "; ";
+  return code;
+};
+
+// movement_controls_speed, SPEED
+HtmlGenerator["movement_controls_speed"] = function (block) {
+  var dropdown_option = block.getFieldValue("SPEED");
+
+  var code = "speed:" + dropdown_option + "; ";
+  return code;
+};
+// movement_controls_camera, CAMERA
+HtmlGenerator["movement_controls_camera"] = function (block) {
+  var dropdown_option = block.getFieldValue("CAMERA");
+
+  var code = "camera:" + dropdown_option + "; ";
+  return code;
+};
+
+//================================================================================================================
+
+// teleport_controls_option, TELEPORT_CONTROL_OPTION
+HtmlGenerator["teleport_controls_option"] = function (block) {
+  var statements_hit_test_options = HtmlGenerator.statementToCode(
+    block,
+    "TELEPORT_CONTROL_OPTION"
+  );
+
+  var code = ' teleport-controls="' + statements_hit_test_options + '"';
+  return code;
+};
+
+// teleport_controls_cameraRig, TELEPORT_CONTROLS_CAMERARIG
+HtmlGenerator["teleport_controls_cameraRig"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_CAMERARIG");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " cameraRig: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_teleportOrigin, TELEPORT_CONTROLS_ORIGIN
+HtmlGenerator["teleport_controls_teleportOrigin"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_ORIGIN");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " teleportOrigin: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_collisionEntities, TELEPORT_CONTROLS_COLLISION_ENTITIES
+HtmlGenerator["teleport_controls_collisionEntities"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_COLLISION_ENTITIES");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " collisionEntities: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_hitEntity, TELEPORT_CONTROLS_HIT_ENTITY
+HtmlGenerator["teleport_controls_hitEntity"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_HIT_ENTITY");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " hitEntity: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_hitCylinderRadius, TELEPORT_CONTROLS_HIT_CYLINDER_RADIUS
+HtmlGenerator["teleport_controls_hitCylinderRadius"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_HIT_CYLINDER_RADIUS");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " hitCylinderRadius: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_hitCylinderHeight, TELEPORT_CONTROLS_HIT_CYLINDER_HEIGHT
+HtmlGenerator["teleport_controls_hitCylinderHeight"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_HIT_CYLINDER_HEIGHT");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " hitCylinderHeight: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_interval, TELEPORT_CONTROLS_INTERVAL
+HtmlGenerator["teleport_controls_interval"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_INTERVAL");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " interval: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_curveNumberPoints, TELEPORT_CONTROLS_CURVE_NUMBER_POINTS
+HtmlGenerator["teleport_controls_curveNumberPoints"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_CURVE_NUMBER_POINTS");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " curveNumberPoints: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_curveLineWidth, TELEPORT_CONTROLS_CURVE_LINE_WIDTH
+HtmlGenerator["teleport_controls_curveLineWidth"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_CURVE_LINE_WIDTH");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " curveLineWidth: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_curveShootingSpeed, TELEPORT_CONTROLS_CURVE_SHOOTING_SPEED
+HtmlGenerator["teleport_controls_curveShootingSpeed"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_CURVE_SHOOTING_SPEED");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " curveShootingSpeed: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_defaultPlaneSize, TELEPORT_CONTROLS_DEFAULT_PLANE_SIZE
+HtmlGenerator["teleport_controls_defaultPlaneSize"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_DEFAULT_PLANE_SIZE");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " defaultPlaneSize: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_maxLength, TELEPORT_CONTROLS_MAX_LENGTH
+HtmlGenerator["teleport_controls_maxLength"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_MAX_LENGTH");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " maxLength: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_landingMaxAngle, TELEPORT_CONTROLS_LANDING_MAX_ANGLE
+HtmlGenerator["teleport_controls_landingMaxAngle"] = function (block) {
+  var text_pair = block.getFieldValue("TELEPORT_CONTROLS_LANDING_MAX_ANGLE");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " landingMaxAngle: " + text_pair + ";";
+  return code;
+};
+
+// teleport_controls_hitCylinderColor, TELEPORT_CONTROLS_HIT_CYLINDER_COLOR
+HtmlGenerator["teleport_controls_hitCylinderColor"] = function (block) {
+  var colour_name = block.getFieldValue("TELEPORT_CONTROLS_HIT_CYLINDER_COLOR");
+  var code = "curveHitColor: " + colour_name + ";";
+  return code;
+};
+
+// teleport_controls_curveHitColor, TELEPORT_CONTROLS_CURVE_HIT_COLOR
+HtmlGenerator["teleport_controls_curveHitColor"] = function (block) {
+  var colour_name = block.getFieldValue("TELEPORT_CONTROLS_CURVE_HIT_COLOR");
+  var code = "curveHitColor: " + colour_name + ";";
+  return code;
+};
+
+// teleport_controls_curveMissColor, TELEPORT_CONTROLS_CURVE_MISS_COLOR
+HtmlGenerator["teleport_controls_curveMissColor"] = function (block) {
+  var colour_name = block.getFieldValue("TELEPORT_CONTROLS_CURVE_MISS_COLOR");
+  var code = "curveMissColor: " + colour_name + ";";
+  return code;
+};
+
+// teleport_controls_button, BUTTON
+HtmlGenerator["teleport_controls_button"] = function (block) {
+  var dropdown_model = block.getFieldValue("BUTTON");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " button: " + dropdown_model + ";";
+
+  return code;
+};
+
+// teleport_controls_type, TYPE
+HtmlGenerator["teleport_controls_type"] = function (block) {
+  var dropdown_model = block.getFieldValue("TYPE");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " type: " + dropdown_model + ";";
+
+  return code;
+};
+
+// teleport_controls_startEvents, START_EVENTS
+HtmlGenerator["teleport_controls_startEvents"] = function (block) {
+  var dropdown_model = block.getFieldValue("START_EVENTS");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " startEvents: " + dropdown_model + ";";
+
+  return code;
+};
+
+// teleport_controls_endEvents, END_EVENTS
+HtmlGenerator["teleport_controls_endEvents"] = function (block) {
+  var dropdown_model = block.getFieldValue("END_EVENTS");
+  // TODO: Assemble JavaScript into code variable.
+  var code = " endEvents: " + dropdown_model + ";";
+
+  return code;
+};
+
+//================================================================================================================
+
 HtmlGenerator["oculus_go_controls"] = function (block) {
   var text = block.getFieldValue("OCULUS_GO_CONTROLS");
   // TODO: Assemble JavaScript into code variable.

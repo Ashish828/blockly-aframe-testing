@@ -1027,6 +1027,8 @@ var AframeBlocks = [
           ["Inspector", "js/aframe-inspector.min.js"],
           ["Event", "js/aframe-event-set-component.min.js"],
           ["Environment", "js/aframe-environment.min.js"],
+          ["UI Widgets", "js/aframe-ui-widgets.min.js"],
+          ["Teleport Controls", "js/aframe-teleport-controls.min.js"],
           [
             "Auto Detect Controllers",
             "js/aframe-gearvr-controls-component.min.js",
@@ -3973,6 +3975,695 @@ var AframeBlocks = [
     tooltip: "",
     helpUrl: "",
   },
+  // =================================================================================================================
+
+  {
+    type: "teleport_controls_option",
+    message0: "Teleport Controls =  %1",
+    args0: [
+      {
+        type: "input_statement",
+        name: "TELEPORT_CONTROL_OPTION",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_cameraRig",
+    message0: "Camera Rig:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_CAMERARIG",
+        text: "",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_teleportOrigin",
+    message0: "Teleport Origin:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_ORIGIN",
+        text: "",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_type",
+    message0: "type: %1",
+    args0: [
+      {
+        type: "field_dropdown",
+        name: "TYPE",
+        options: [
+          ["Line", "line"],
+          ["Parabolic", "parabolic"],
+        ],
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_button",
+    message0: "Button: %1",
+    args0: [
+      {
+        type: "field_dropdown",
+        name: "BUTTON",
+        options: [
+          ["Trackpad", "trackpad"],
+          ["Trigger", "trigger"],
+          ["Grip", "grip"],
+          ["Menu", "menu"],
+        ],
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_collisionEntities",
+    message0: "Collision Entities:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_COLLISION_ENTITIES",
+        text: "",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_hitEntity",
+    message0: "Hit Entity:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_HIT_ENTITY",
+        text: "",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_hitCylinderColor",
+    message0: "Hit Cylinder Color:  %1",
+    args0: [
+      {
+        type: "field_colour",
+        name: "TELEPORT_CONTROLS_HIT_CYLINDER_COLOR",
+        colour: "#99ff99",
+      },
+    ],
+    previousStatement: "css",
+    nextStatement: "css",
+    colour: 230,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_hitCylinderRadius",
+    message0: "Hit Cylinder Radius:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_HIT_CYLINDER_RADIUS",
+        text: "0.25",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_hitCylinderHeight",
+    message0: "Hit Cylinder Height:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_HIT_CYLINDER_HEIGHT",
+        text: "0.3",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_interval",
+    message0: "Interval:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_INTERVAL",
+        text: "0",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_curveHitColor",
+    message0: "Curve Hit Color:  %1",
+    args0: [
+      {
+        type: "field_colour",
+        name: "TELEPORT_CONTROLS_CURVE_HIT_COLOR",
+        colour: "#99ff99",
+      },
+    ],
+    previousStatement: "css",
+    nextStatement: "css",
+    colour: 230,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_curveMissColor",
+    message0: "Curve Miss Color:  %1",
+    args0: [
+      {
+        type: "field_colour",
+        name: "TELEPORT_CONTROLS_CURVE_MISS_COLOR",
+        colour: "#ff0000",
+      },
+    ],
+    previousStatement: "css",
+    nextStatement: "css",
+    colour: 230,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_curveNumberPoints",
+    message0: "Curve Number Points:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_CURVE_NUMBER_POINTS",
+        text: "30",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_curveLineWidth",
+    message0: "Curve Line Width:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_CURVE_LINE_WIDTH",
+        text: "0.025",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_curveShootingSpeed",
+    message0: "Curve Shooting Speed:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_CURVE_SHOOTING_SPEED",
+        text: "5",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_defaultPlaneSize",
+    message0: "Default Plane Size:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_DEFAULT_PLANE_SIZE",
+        text: "100",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_maxLength",
+    message0: "Max Length:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_MAX_LENGTH",
+        text: "10",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_landingMaxAngle",
+    message0: "Landing Max Angle:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "TELEPORT_CONTROLS_LANDING_MAX_ANGLE",
+        text: "45",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_startEvents",
+    message0: "Start Events: %1",
+    args0: [
+      {
+        type: "field_dropdown",
+        name: "START_EVENTS",
+        options: [
+          ["Teleport Start", "teleportstart"],
+          ["Teleport End", "teleportend"],
+        ],
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "teleport_controls_endEvents",
+    message0: "End Events: %1",
+    args0: [
+      {
+        type: "field_dropdown",
+        name: "END_EVENTS",
+        options: [
+          ["Teleport Start", "teleportstart"],
+          ["Teleport End", "teleportend"],
+        ],
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  // =================================================================================================================
+  {
+    type: "ui_button",
+    message0: "%1",
+    args0: [
+      {
+        type: "field_label_serializable",
+        name: "UI_BUTTON",
+        text: "ui-button",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 230,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_button_option",
+    message0: "UI Button =  %1",
+    args0: [
+      {
+        type: "input_statement",
+        name: "UI_BUTTON_OPTION",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_button_color",
+    message0: "UI Button Color:  %1",
+    args0: [
+      {
+        type: "field_colour",
+        name: "UI_BUTTON_COLOR",
+        colour: "#960960",
+      },
+    ],
+    previousStatement: "css",
+    nextStatement: "css",
+    colour: 230,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_button_pressedColor",
+    message0: "UI Button Pressed Color:  %1",
+    args0: [
+      {
+        type: "field_colour",
+        name: "UI_BUTTON_PRESSED_COLOR",
+        colour: "#FC2907",
+      },
+    ],
+    previousStatement: "css",
+    nextStatement: "css",
+    colour: 230,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_button_baseColor",
+    message0: "UI Button Base Color:  %1",
+    args0: [
+      {
+        type: "field_colour",
+        name: "UI_BUTTON_BASE_COLOR",
+        colour: "#618EFF",
+      },
+    ],
+    previousStatement: "css",
+    nextStatement: "css",
+    colour: 230,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_button_topY",
+    message0: "UI Button Top Y:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "UI_BUTTON_TOP_Y",
+        text: "0.02",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_button_pressedY",
+    message0: "UI Button pressed Y:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "UI_BUTTON_PRESSED_Y",
+        text: "0.012",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_button_base",
+    message0: "UI Button Base:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "UI_BUTTON_BASE",
+        text: "",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+  {
+    type: "ui_button_top",
+    message0: "UI Button Top:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "UI_BUTTON_TOP",
+        text: "",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+  {
+    type: "ui_button_pressed",
+    message0: "UI Button pressed:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "UI_BUTTON_PRESSED",
+        text: "",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_toggle",
+    message0: "%1",
+    args0: [
+      {
+        type: "field_label_serializable",
+        name: "UI_TOGGLE",
+        text: "ui-toggle",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 230,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_toggle_option",
+    message0: "UI Toggle =  %1",
+    args0: [
+      {
+        type: "input_statement",
+        name: "UI_TOGGLE_OPTION",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_toggle_value",
+    message0: "UI Toggle Value:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "UI_TOGGLE_VALUE",
+        text: "0",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_slider",
+    message0: "%1",
+    args0: [
+      {
+        type: "field_label_serializable",
+        name: "UI_SLIDER",
+        text: "ui-slider",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 230,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_slider_option",
+    message0: "UI Slider =  %1",
+    args0: [
+      {
+        type: "input_statement",
+        name: "UI_SLIDER_OPTION",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_slider_value",
+    message0: "UI Slider Value:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "UI_SLIDER_VALUE",
+        text: "50",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_slider_min",
+    message0: "UI Slider Min Value:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "UI_SLIDER_MIN",
+        text: "0",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "ui_slider_max",
+    message0: "UI Slider Max Value:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "UI_SLIDER_MAX",
+        text: "100",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+  {
+    type: "ui_rotary",
+    message0: "%1",
+    args0: [
+      {
+        type: "field_label_serializable",
+        name: "UI_ROTARY",
+        text: "ui-rotary",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 230,
+    tooltip: "",
+    helpUrl: "",
+  },
 
   // =================================================================================================================
   {
@@ -4078,6 +4769,156 @@ var AframeBlocks = [
           ["True", "true"],
           ["False", "false"],
         ],
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  // =================================================================================================================
+
+  {
+    type: "movement_controls",
+    message0: "%1",
+    args0: [
+      {
+        type: "field_label_serializable",
+        name: "MOVEMENT_CONTROLS",
+        text: "movement-controls",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 230,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "movement_controls_options",
+    message0: "Movement Controls =  %1",
+    args0: [
+      {
+        type: "input_statement",
+        name: "MOVEMENT_CONTROLS_OPTIONS",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "movement_controls_enabled",
+    message0: "enabled: %1",
+    args0: [
+      {
+        type: "field_dropdown",
+        name: "ENABLED",
+        options: [
+          ["True", "true"],
+          ["False", "false"],
+        ],
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "movement_controls_controls",
+    message0: "controls: %1",
+    args0: [
+      {
+        type: "field_dropdown",
+        name: "CONTROLS",
+        options: [
+          ["Gamepad", "gamepad"],
+          ["Keyboard", "keyboard"],
+          ["Touch", "touch"],
+        ],
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "movement_controls_fly",
+    message0: "fly: %1",
+    args0: [
+      {
+        type: "field_dropdown",
+        name: "FLY",
+        options: [
+          ["True", "true"],
+          ["False", "false"],
+        ],
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "movement_controls_constrainToNavMesh",
+    message0: "Constrain To Nav Mesh: %1",
+    args0: [
+      {
+        type: "field_dropdown",
+        name: "CONSTRAINTONAVMESH",
+        options: [
+          ["True", "true"],
+          ["False", "false"],
+        ],
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "movement_controls_speed",
+    message0: "speed:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "SPEED",
+        text: "0.3",
+      },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 0,
+    tooltip: "",
+    helpUrl: "",
+  },
+
+  {
+    type: "movement_controls_camera",
+    message0: "camera:  %1",
+    args0: [
+      {
+        type: "field_input",
+        name: "CAMERA",
+        text: "",
       },
     ],
     previousStatement: null,
